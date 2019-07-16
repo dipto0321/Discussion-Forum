@@ -24,6 +24,7 @@ gem 'jbuilder', '~> 2.5'
 gem 'bootsnap', '>= 1.1.0', require: false
 
 gem 'bulma-rails', '~> 0.7.5'
+gem 'font-awesome-sass', '~> 5.9'
 gem 'simple_form', '~> 4.1'
 gem 'devise', '~> 4.6', '>= 4.6.2'
 gem 'gravatar_image_tag', '~> 1.2'
