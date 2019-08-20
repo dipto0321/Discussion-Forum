@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_08_20_081906) do
+ActiveRecord::Schema.define(version: 2019_08_20_082734) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -22,6 +22,16 @@ ActiveRecord::Schema.define(version: 2019_08_20_081906) do
     t.datetime "updated_at", null: false
     t.bigint "user_id"
     t.index ["user_id"], name: "index_discussions_on_user_id"
+  end
+
+  create_table "replies", force: :cascade do |t|
+    t.text "reply"
+    t.bigint "discussion_id"
+    t.bigint "user_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["discussion_id"], name: "index_replies_on_discussion_id"
+    t.index ["user_id"], name: "index_replies_on_user_id"
   end
 
   create_table "users", force: :cascade do |t|
@@ -42,4 +52,6 @@ ActiveRecord::Schema.define(version: 2019_08_20_081906) do
   end
 
   add_foreign_key "discussions", "users"
+  add_foreign_key "replies", "discussions"
+  add_foreign_key "replies", "users"
 end
