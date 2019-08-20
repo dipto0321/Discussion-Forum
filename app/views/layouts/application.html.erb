@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>DiscussionForum</title>
+    <title>Discussion Forum</title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
@@ -12,10 +12,9 @@
   <body>
     <nav class="navbar" role="navigation" aria-label="main navigation">
       <div class="navbar-brand">
-        <a class="navbar-item" href="#">
+        <%= link_to root_path, class:"navbar-item" do %>
           <h1 class="title has-text-link">Discussions Forum</h1>
-        </a>
-
+        <% end %>
         <a role="button" class="navbar-burger burger" aria-label="menu" aria-expanded="false" data-target="navbarBasicExample">
           <span aria-hidden="true"></span>
           <span aria-hidden="true"></span>
@@ -30,12 +29,10 @@
               <a class="button is-primary">
                 <strong>New Discussion</strong>
               </a>
-              <a class="button is-info">
+              <%= link_to new_user_registration_path, class:"button is-info" do %>
                 <strong>Sign up</strong>
-              </a>
-              <a class="button is-light">
-                Log in
-              </a>
+              <% end %>
+              <%= link_to "Log in", new_user_session_path, class:"button is-light" %>
             </div>
           </div>
         </div>
