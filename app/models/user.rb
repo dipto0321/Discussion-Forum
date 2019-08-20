@@ -6,4 +6,7 @@ class User < ApplicationRecord
 
   has_many :discussions
   has_many :replies
+
+  has_many :contributors
+  has_many :channels, through: :contributors
 end
