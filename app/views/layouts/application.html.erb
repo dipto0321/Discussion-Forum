@@ -37,9 +37,9 @@
         <div class="navbar-end">
           <div class="navbar-item">
             <div class="buttons">
-              <a class="button is-primary">
+              <%= link_to new_discussion_path, class: 'button is-primary' do%>
                 <strong>New Discussion</strong>
-              </a>
+              <%end%>
               <%= link_to new_user_registration_path, class:"button is-info" do %>
                 <strong>Sign up</strong>
               <% end %>
