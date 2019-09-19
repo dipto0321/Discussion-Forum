@@ -1,15 +1,18 @@
 class DiscussionsController < ApplicationController
   before_action :set_discussion, only: [:show, :edit, :update, :destroy]
+  before_action :get_channels, except: [:create, :uodate, :destroy]
+  before_action :authenticate_user!
 
   # GET /discussions
   # GET /discussions.json
   def index
-    @discussions = Discussion.all
+    @discussions = Discussion.all.order('created_at desc')
   end
 
   # GET /discussions/1
   # GET /discussions/1.json
   def show
+    
   end
 
   # GET /discussions/new
@@ -65,6 +68,10 @@ class DiscussionsController < ApplicationController
     # Use callbacks to share common setup or constraints between actions.
     def set_discussion
       @discussion = Discussion.find(params[:id])
+    end
+
+    def get_channels
+      @channels = Channel.all.order('created_at desc')
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.
