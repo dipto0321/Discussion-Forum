@@ -34,6 +34,8 @@ gem 'cancancan', '~> 3.0', '>= 3.0.1'
 gem 'friendly_id', '~> 5.2', '>= 5.2.5'
 gem 'redcarpet', '~> 3.4'
 gem 'coderay', '~> 1.1', '>= 1.1.2'
+gem 'travis'
+gem 'rubocop', '~> 0.74.0'
 
 group :development, :test do
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
