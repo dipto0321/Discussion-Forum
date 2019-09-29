@@ -35,10 +35,11 @@ gem 'friendly_id', '~> 5.2', '>= 5.2.5'
 gem 'redcarpet', '~> 3.4'
 gem 'coderay', '~> 1.1', '>= 1.1.2'
 gem 'travis'
-gem 'rubocop', '~> 0.74.0'
+
 
 group :development, :test do
-  gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
+  gem 'byebug'
+  gem 'rubocop', '~> 0.74.0'
   gem 'awesome_rails_console'
   gem 'hirb'
   gem 'hirb-unicode-steakknife', require: 'hirb-unicode'
@@ -50,4 +51,7 @@ group :development do
   gem 'web-console', '>= 3.3.0'
 end
 
-gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
+platforms: :mingw, :mswin, :x64_mingw do
+  gem 'tzinfo-data'
+  gem 'byebug', platforms: %i[mri mingw x64_mingw], group: :development
+end
