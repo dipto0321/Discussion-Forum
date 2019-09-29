@@ -1,10 +1,9 @@
 class RepliesController < ApplicationController
   before_action :authenticate_user!
-  before_action :set_discussion only: [:create, :edit, :update, :show, :destroy]
-  before_action :set_reply only: [:edit, :update, :show, :destroy]
+  before_action :set_discussion, only: %i[create edit update show destroy]
+  before_action :set_reply, only: %i[edit update show destroy]
 
-  def new
-  end
+  def new; end
 
   def create
     @reply = @discussion.replies.build(reply_params)
@@ -18,16 +17,14 @@ class RepliesController < ApplicationController
     end
   end
 
-  def show
-  end
+  def show; end
 
-  def edit
-  end
+  def edit; end
 
   def update
     respond_to do |format|
       if @reply.update(reply_params)
-        format.html { redirect_to discussion_path(@discussion), notice: "Reply has successfully updated!" }
+        format.html { redirect_to discussion_path(@discussion), notice: 'Reply has successfully updated!' }
       else
         format.html { redirect_to discussion_path(@discussion), notice: "Reply hasn't updated. Please try again! " }
       end
