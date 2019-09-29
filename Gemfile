@@ -38,8 +38,8 @@ gem 'travis'
 
 
 group :development, :test do
-  gem 'byebug'
-  gem 'rubocop', '~> 0.74.0'
+  gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
+  gem 'rubocop', '~> 0.74.0', require: false
   gem 'awesome_rails_console'
   gem 'hirb'
   gem 'hirb-unicode-steakknife', require: 'hirb-unicode'
@@ -51,7 +51,4 @@ group :development do
   gem 'web-console', '>= 3.3.0'
 end
 
-platforms: :mingw, :mswin, :x64_mingw do
-  gem 'tzinfo-data'
-  gem 'byebug', platforms: %i[mri mingw x64_mingw], group: :development
-end
+gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
