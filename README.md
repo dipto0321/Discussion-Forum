@@ -1,10 +1,10 @@
 # discussion-forum
 
-![banner]()
+
 
 [![standard-readme compliant](https://img.shields.io/badge/standard--readme-OK-green.svg?style=flat-square)](https://github.com/RichardLitt/standard-readme)
 [![Build Status](https://travis-ci.org/dipto0321/Discussion-Forum.svg?branch=dev)](https://travis-ci.org/dipto0321/Discussion-Forum)
-
+[![Maintainability](https://api.codeclimate.com/v1/badges/92dab810ef5d0eb8c967/maintainability)](https://codeclimate.com/github/dipto0321/Discussion-Forum/maintainability)
 > It&#39;s a discussion forum for programmer
 
 TODO: Fill out this long description.
