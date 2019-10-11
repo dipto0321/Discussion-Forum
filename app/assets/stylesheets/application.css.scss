@@ -13,3 +13,10 @@
  *= require_tree .
  *= require_self
  */
+@import "bulma";
+@import "font-awesome-sprockets";
+@import "font-awesome";
+
+.fd-column {
+  flex-direction: column;
+}
